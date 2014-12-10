@@ -15,6 +15,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{tuthesis}[2017/07/07 Temple thesis class]
+
 \usepackage{ifthen}
 \newcommand{\ifthen}[2]{\ifthenelse{#1}{#2}{}}
 \usepackage{endnotes}
@@ -570,7 +571,7 @@
   }
 \ifthen{\equal{math}{\@@dept}}
   {
-    \def\@@makechapterhead#1{\large\bf\thechapter. #1}
+     \def\@@makechapterhead#1{\large\bf\thechapter. \uppercase{#1}}
     \def\@@makechapterheadspacea{\vspace*{0.5truein}}
     \def\@@makechapterheadspaceb{\vspace{0.5\baselineskip}}
     \def\@@makeschapterheadspacea{\vspace*{0.5truein}}
@@ -578,11 +579,15 @@
   }
 \ifthen{\equal{phys}{\@@dept}}
   {
-    \def\@@makechapterhead#1{\large\bf\thechapter. #1}
-    \def\@@makechapterheadspacea{\vspace*{0.5truein}}
-    \def\@@makechapterheadspaceb{\vspace{0.5\baselineskip}}
-    \def\@@makeschapterheadspacea{\vspace*{0.5truein}}
-    \def\@@makeschapterheadspaceb{\vspace*{0.5\baselineskip}}
+     \def\@@makechapterhead#1{\large\bf\thechapter.\MakeUppercase{#1}}
+     \def\@@makechapterheadspacea{\vspace*{0.5truein}}
+     \def\@@makechapterheadspaceb{\vspace{0.5\baselineskip}}
+     \def\@@makeschapterheadspacea{\vspace*{0.5truein}}
+     \def\@@makeschapterheadspaceb{\vspace*{0.5\baselineskip}}
+     \renewcommand*\l@section{\@dottedtocline{2}{\bigtocskip}{3.8em}{3.2em}}
+     \renewcommand*\l@subsection{\@dottedtocline{2}{\bigtocskip}{3.8em}{3.2em}}
+     \renewcommand*\l@subsubsection{\@dottedtocline{3}{\bigtocskip}{7.0em}{4.1em}}
+%    \def\@@sectionseries{\scshape}
   }
 \ifthen{\equal{stat}{\@@dept}}
   {
@@ -801,19 +806,26 @@
       {
         \ifthenelse{\equal{ce}{\@@dept}}
           {\addcontentsline{toc}{chapter}{\uppercase{#2}}}
-          {\addcontentsline{toc}{chapter}{#2}}
+          {\addcontentsline{toc}{chapter}{\textnormal{#2}}}
       }
   \egroup
   \vspace{#4}
 }}
+
+\newenvironment{copyrightpage}%
+  {\@@nonchapter{next}{}{n}{0pt}}%
+  {}
+
 \newenvironment{acknowledgments}%
-  {\@@nonchapter{next}{ACKNOWLEDGMENTS}{n}{0pt}}%
+  {\@@nonchapter{next}{\bfseries ACKNOWLEDGMENTS}{y}{0pt}}%
   {}
+
 \newenvironment{preface}%
-  {\@@nonchapter{next}{PREFACE}{n}{0pt}}%
+  {\@@nonchapter{next}{\bfseries PREFACE}{y}{0pt}}%
   {}
+
 \renewcommand*{\tableofcontents}{
-  \@@nonchapter{odd}{TABLE OF CONTENTS}{n}{0pt}
+   \@@nonchapter{odd}{\bfseries TABLE OF CONTENTS}{n}{0pt}
   {\leftskip=0pt \noindent\hbox to\textwidth{\hfil Page}\par}
   {%
 %   \renewcommand*{\@oddhead}{%
@@ -896,7 +908,7 @@
   \fi
 }
 \renewcommand*{\listoftables}{
-  \@@nonchapter{next}{LIST OF TABLES}{y}{0pt}
+  \@@nonchapter{next}{\bfseries LIST OF TABLES}{y}{0pt}
   {\leftskip=0pt \noindent\hbox to\textwidth{Table\hfil Page}\par}
   {%
     \output={
@@ -933,7 +945,7 @@
   }
 }
 \renewcommand{\listoffigures}{
-  \@@nonchapter{next}{LIST OF FIGURES}{y}{0pt}
+  \@@nonchapter{next}{\bfseries LIST OF FIGURES}{y}{0pt}
   {\leftskip=0pt \noindent\hbox to\textwidth{Figure\hfil Page}\par}
   {%
     \output={
