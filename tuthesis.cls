@@ -291,7 +291,7 @@
 
 \def\AppendixFigure{\relax}
 \def\AppendixTable{\relax}
-\def\@@bibname{REFERENCES}
+\def\@@bibname{REFERENCES CITED}
 \def\@@deptbibstyle{unsrt}
 \def\@@coversheetspace{\vfill}
 \def\@@evenfoot{}
@@ -571,7 +571,7 @@
   }
 \ifthen{\equal{math}{\@@dept}}
   {
-     \def\@@makechapterhead#1{\large\bf\thechapter. \uppercase{#1}}
+     \def\@@makechapterhead#1{\large\bf Chapter \thechapter \\ \uppercase{#1}}
     \def\@@makechapterheadspacea{\vspace*{0.5truein}}
     \def\@@makechapterheadspaceb{\vspace{0.5\baselineskip}}
     \def\@@makeschapterheadspacea{\vspace*{0.5truein}}
@@ -579,7 +579,8 @@
   }
 \ifthen{\equal{phys}{\@@dept}}
   {
-     \def\@@makechapterhead#1{\large\bf\thechapter.\MakeUppercase{#1}}
+     \def\@@makechapterhead#1{\large\bf Chapter \thechapter \\
+     \MakeUppercase{#1}}
      \def\@@makechapterheadspacea{\vspace*{0.5truein}}
      \def\@@makechapterheadspaceb{\vspace{0.5\baselineskip}}
      \def\@@makeschapterheadspacea{\vspace*{0.5truein}}
@@ -801,7 +802,7 @@
     \renewcommand{\bf}{}%
     \ifthenelse{\equal{ce}{\@@dept}}
       {\chapter*{\uppercase{#2}}}
-      {\chapter*{#2}}
+      {\chapter*{\bfseries #2}}
     \ifthen{\equal{y}{#3}}
       {
         \ifthenelse{\equal{ce}{\@@dept}}
@@ -817,15 +818,15 @@
   {}
 
 \newenvironment{acknowledgments}%
-  {\@@nonchapter{next}{\bfseries ACKNOWLEDGMENTS}{y}{0pt}}%
+  {\@@nonchapter{next}{ACKNOWLEDGMENTS}{y}{0pt}}%
   {}
 
 \newenvironment{preface}%
-  {\@@nonchapter{next}{\bfseries PREFACE}{y}{0pt}}%
+  {\@@nonchapter{next}{PREFACE}{y}{0pt}}%
   {}
 
 \renewcommand*{\tableofcontents}{
-   \@@nonchapter{odd}{\bfseries TABLE OF CONTENTS}{n}{0pt}
+   \@@nonchapter{odd}{TABLE OF CONTENTS}{n}{0pt}
   {\leftskip=0pt \noindent\hbox to\textwidth{\hfil Page}\par}
   {%
 %   \renewcommand*{\@oddhead}{%
@@ -908,7 +909,7 @@
   \fi
 }
 \renewcommand*{\listoftables}{
-  \@@nonchapter{next}{\bfseries LIST OF TABLES}{y}{0pt}
+  \@@nonchapter{next}{LIST OF TABLES}{y}{0pt}
   {\leftskip=0pt \noindent\hbox to\textwidth{Table\hfil Page}\par}
   {%
     \output={
@@ -945,7 +946,7 @@
   }
 }
 \renewcommand{\listoffigures}{
-  \@@nonchapter{next}{\bfseries LIST OF FIGURES}{y}{0pt}
+  \@@nonchapter{next}{LIST OF FIGURES}{y}{0pt}
   {\leftskip=0pt \noindent\hbox to\textwidth{Figure\hfil Page}\par}
   {%
     \output={
@@ -1505,7 +1506,7 @@
 
 \renewenvironment{thebibliography}[1]
   {
-    \@@startthebibliography
+    %^\@@startthebibliography
     \@@nonchapter{odd}{\@@bibname}{y}{24pt}
     \list
       {\@biblabel{\arabic{enumiv}}}%
