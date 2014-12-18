@@ -1030,21 +1030,21 @@
     {%
       \renewcommand*{\baselinestretch}{1.0}\reset@font
       \vspace*{\baselineskip}
-      \vbox{
-        \noindent
-        \@@AbstractAuthor~\@@AbstractDegree,
-        Temple University,
-        \@@DegreeMonth\ %
-        \@@DegreeYear.
-        {%
-          \renewcommand*{\\}{}%
-          \@@Title.
-        }
-        \ifthenelse{\isundefined{\@@OverrideMajorProf}}
-          {\@@MajorProf\ifthen{\equal{me}{\@@dept}}{, School of Mechanical Engineering}.}
-          {\@@OverrideMajorProf}
-      }
-      \vspace*{\baselineskip}
+      %\vbox{
+      %  %\noindent
+      %  %\@@AbstractAuthor~\@@AbstractDegree,
+      %  %Temple University,
+      %  %\@@DegreeMonth\ %
+      %  %\@@DegreeYear.
+      %  %{%
+      %  %  \renewcommand*{\\}{}%
+      %  %  \@@Title.
+      %  %}
+      %  %\ifthenelse{\isundefined{\@@OverrideMajorProf}}
+      %  %  {\@@MajorProf\ifthen{\equal{me}{\@@dept}}{, School of Mechanical Engineering}.}
+      %  %  {\@@OverrideMajorProf}
+      %}
+      %\vspace*{\baselineskip}
       \par
     }
   }%
