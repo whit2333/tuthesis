@@ -579,8 +579,12 @@
   }
 \ifthen{\equal{phys}{\@@dept}}
   {
-     \def\@@makechapterhead#1{\large\bf Chapter \thechapter \\
-     \MakeUppercase{#1}}
+    \def\@@makechapterhead#1{
+      \ifthenelse{\boolean{@@inappendix}}
+        {\large\bf APPENDIX \thechapter\\\uppercase{#1}}
+        {\large\bf Chapter \thechapter \\ \MakeUppercase{#1}} 
+    }
+     %\def\@@makechapterhead#1{\large\bf Chapter \thechapter \\ \MakeUppercase{#1}}
      \def\@@makechapterheadspacea{\vspace*{0.5truein}}
      \def\@@makechapterheadspaceb{\vspace{0.5\baselineskip}}
      \def\@@makeschapterheadspacea{\vspace*{0.5truein}}
@@ -1540,6 +1544,7 @@
     \sfcode`\.=\@m
   }
   {}
+
 \newboolean{@@inappendix}
 \newcommand{\@@appendixname}{Appendix}
 \renewcommand{\appendix}{\par
@@ -1559,6 +1564,7 @@
   \renewcommand{\@chapapp}{\appendixname}%
   \renewcommand{\thechapter}{\Alph{chapter}}
 }
+
 \newcommand{\@@vitaname}{VITA}
 \newenvironment{vita}
   {
