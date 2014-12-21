@@ -18,13 +18,13 @@ enough people ask for latex templates they will make one or we could shame them
 into maintaining this one.
 
 A few things to note:
- - Currently only correct formatting for physics or ``hard sciences'',
+ - Currently only correct formatting for physics or "hard sciences",
    (sorry, feel free to modify the code for your discipline).
  - Last updated to follow 2015 [Dissertation and Thesis 
    Handbook](http://www.temple.edu/dissertationhandbook/index.htm)
  - This has only been used on Linux.  If you find bugs, please fix and/or 
- - report them via [github](https://github.com/whit2333/tuthesis) or 
- - [email](whit@temple.edu).
+   report them via [github](https://github.com/whit2333/tuthesis) or 
+   [email](whit@temple.edu).
 
 The Template
 ------------
