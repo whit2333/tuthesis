@@ -678,7 +678,6 @@
   \renewcommand{\@@t}{Westville}       \ifthen{\equal{#1}{\@@t}}{\edef\@@Campus{\@@t}}
 }
 
-
 \newcommand*{\@@TitleDegree}{\relax}
 \newcommand*{\@@AbstractDegree}{\relax}
 \newcommand*{\@@DegreeMonth}{\relax}
@@ -1061,6 +1060,11 @@
   \@afterindentfalse
   \secdef \@chapter \@schapter
 }
+\newcommand{\chapterscolumn}{
+      \addtocontents{toc}{\protect\vspace{12pt}}
+      \setboolean{@@unset}{false}\addtocontents{toc}{ \leftskip=0pt \noindent\hbox to\textwidth{ \hfil }\par }
+      \setboolean{@@unset}{false}\addtocontents{toc}{ \leftskip=0pt \noindent\hbox to\textwidth{CHAPTER\hfil }\par }
+}
 \newboolean{@@inchapters}
 \setboolean{@@inchapters}{false}
 \def\@chapter[#1]#2{%
@@ -1068,8 +1072,8 @@
     \refstepcounter{chapter}%
     \typeout{\@chapapp\space\thechapter.}%
     \setboolean{@@unset}{true}
-    \ifthen{\equal{agecon}{\@@dept}}
-      {\setboolean{@@unset}{false}\addcontentsline{toc}{chapter}{\protect\uppercase{\@chapapp\ \thechapter. #1}}}
+    \ifthen{\equal{phys}{\@@dept}}
+      {\setboolean{@@unset}{false}\addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}\uppercase{#1}}}
     \ifthen{\equal{ce}{\@@dept}}
       {\setboolean{@@unset}{false}\addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}\uppercase{#1}}}
     \ifthen{\equal{me}{\@@dept}}
@@ -1078,6 +1082,7 @@
       {\setboolean{@@unset}{false}\addcontentsline{toc}{chapter}{\protect\uppercase{\@chapapp\ \thechapter. #1}}}
     \ifthen{\boolean{@@unset}}
       {\addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#1}}
+      %{\setboolean{@@unset}{false}\addcontentsline{toc}{chapter}{\protect\uppercase{\@chapapp\ \thechapter. \uppercase{#1}}}}
   \else
     \ifthenelse{\equal{ce}{\@@dept}}
       {\addcontentsline{toc}{chapter}{\uppercase{#1}}}
