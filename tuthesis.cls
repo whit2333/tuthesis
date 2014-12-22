@@ -536,7 +536,7 @@
       % format.
     \setlength{\dbltextfloatsep}{36pt}
       % The vertical spacing between floats appearing either at the
-      % top or at the bottom of a page.
+      3 top or at the bottom of a page.
     \setlength{\floatsep}{36pt}
       % The vertical spacing above and below a float that appears in
       % the middle of a text page with the h placement argument.
@@ -590,7 +590,7 @@
      \def\@@makeschapterheadspacea{\vspace*{0.5truein}}
      \def\@@makeschapterheadspaceb{\vspace*{0.5\baselineskip}}
      \renewcommand*\l@section{\@dottedtocline{2}{\bigtocskip}{3.8em}{3.2em}}
-     \renewcommand*\l@subsection{\@dottedtocline{2}{\bigtocskip}{3.8em}{3.2em}}
+     \renewcommand*\l@subsection{\@dottedtocline{2}{\bigtocskip}{7.0em}{3.2em}}
      \renewcommand*\l@subsubsection{\@dottedtocline{3}{\bigtocskip}{7.0em}{4.1em}}
 %    \def\@@sectionseries{\scshape}
   }
