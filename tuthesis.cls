@@ -1553,6 +1553,7 @@
   \setcounter{section}{0}%
   \coversheet{\uppercase\expandafter{\@@appendixname}}
   \renewcommand{\@chapapp}{\appendixname}%
+  \renewcommand{\theHchapter}{\Alph{chapter}}
   \renewcommand{\thechapter}{\Alph{chapter}}
 }
 \newcommand{\@@appendicesname}{Appendices}
@@ -1562,6 +1563,7 @@
   \setcounter{section}{0}%
   \coversheet{\uppercase\expandafter{\@@appendicesname}}
   \renewcommand{\@chapapp}{\appendixname}%
+  \renewcommand{\theHchapter}{\Alph{chapter}}
   \renewcommand{\thechapter}{\Alph{chapter}}
 }
 
