@@ -11,5 +11,5 @@
 \contentsline {chapter}{\numberline {2}\uppercase {The Second Chapter}}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Bite My Shiny}{3}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Metal}{3}{subsection.2.1.1}
-\contentsline {chapter}{\numberline {A}\uppercase {Kitties}}{5}{chapter.1}
+\contentsline {chapter}{\numberline {A}\uppercase {Kitties}}{5}{chapter.A}
 \contentsline {chapter}{\textnormal {REFERENCES CITED}}{6}{chapter*.8}
