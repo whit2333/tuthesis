@@ -14,8 +14,7 @@ class by [Mark Senn](https://engineering.purdue.edu/~mark/). Please thank him.
 
 Ideally the Temple University Grad School would maintain and update with their 
 latest formatting requirements (since almost everybody uses latex). Perhaps if 
-enough people ask for latex templates they will make one or we could shame them 
-into maintaining this one.
+enough people ask for a latex template they will make one or maintain this one.
 
 A few things to note:
  - Currently only correct formatting for physics or "hard sciences",
