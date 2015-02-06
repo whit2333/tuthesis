@@ -14,11 +14,16 @@
 \documentclass[phys,dissertation]{tuthesis}
 
 \usepackage{amsmath}
-\usepackage{hyperref}
 
 \setlength{\marginparwidth}{100pt}
 \setlength{\textwidth}{410pt}
 
+
+% Maker sure hyperref is last becuase otherwise things get buggy!
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+            citecolor=black,
+            linkcolor=black}
 
 \graphicspath{{./figs/}}
 
