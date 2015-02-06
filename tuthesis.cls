@@ -798,7 +798,8 @@
     }
   }
 \newenvironment{dedication}%
-  { \@@nonchapter{next}{}{y}{0pt}%
+  { %\@@nonchapter{next}{}{y}{0pt}%
+    \newpage
     \mbox{}
     \vfil
     \begin{center}%
