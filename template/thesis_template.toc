@@ -1,15 +1,16 @@
 \contentsline {chapter}{\textnormal {ABSTRACT}}{iii}{chapter*.2}
-\contentsline {chapter}{\textnormal {ACKNOWLEDGMENTS}}{v}{chapter*.3}
-\contentsline {chapter}{\textnormal {PREFACE}}{vi}{chapter*.4}
-\contentsline {chapter}{\textnormal {LIST OF TABLES}}{viii}{chapter*.6}
-\contentsline {chapter}{\textnormal {LIST OF FIGURES}}{ix}{chapter*.7}
+\contentsline {chapter}{\textnormal {DEDICATION}}{iv}{chapter*.3}
+\contentsline {chapter}{\textnormal {ACKNOWLEDGMENTS}}{v}{chapter*.4}
+\contentsline {chapter}{\textnormal {PREFACE}}{vi}{chapter*.5}
+\contentsline {chapter}{\textnormal {LIST OF TABLES}}{viii}{chapter*.7}
+\contentsline {chapter}{\textnormal {LIST OF FIGURES}}{ix}{chapter*.8}
 \vspace {12pt}
  \leftskip =0pt \noindent \hbox to\textwidth { \hfil }\par 
  \leftskip =0pt \noindent \hbox to\textwidth {CHAPTER\hfil }\par 
 \contentsline {chapter}{\numberline {1}\uppercase {The First Chapter}}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Section one}{1}{section.1.1}
 \contentsline {chapter}{\numberline {2}\uppercase {The Second Chapter}}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Bite My Shiny}{3}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Metal}{3}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.1}Herding cats}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Is fun}{3}{subsection.2.1.1}
+\contentsline {chapter}{\textnormal {REFERENCES CITED}}{4}{chapter*.9}
 \contentsline {chapter}{\numberline {A}\uppercase {Kitties}}{5}{chapter.A}
-\contentsline {chapter}{\textnormal {REFERENCES CITED}}{6}{chapter*.8}

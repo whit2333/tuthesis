@@ -582,7 +582,7 @@
     \def\@@makechapterhead#1{
       \ifthenelse{\boolean{@@inappendix}}
         {\large\bf APPENDIX \thechapter\\\uppercase{#1}}
-        {\large\bf Chapter \thechapter \\ \MakeUppercase{#1}} 
+        {\large\bf CHAPTER \thechapter \\ \MakeUppercase{#1}} 
     }
      %\def\@@makechapterhead#1{\large\bf Chapter \thechapter \\ \MakeUppercase{#1}}
      \def\@@makechapterheadspacea{\vspace*{0.5truein}}
@@ -692,6 +692,10 @@
   \renewcommand*{\@@DegreeMonth}{#3}%
   \renewcommand*{\@@DegreeYear}{#4}%
 }
+
+\newcommand*{\@@Committee}{\relax}
+\newcommand*{\committee}[1]{\renewcommand*{\@@Committee}{#1}}
+
 \newcommand*{\@@MajorProf}{\relax}
 \newcommand*{\majorprof}[1]{\renewcommand*{\@@MajorProf}{Major Professor: #1}}
 \newcommand*{\majorprofs}[1]{\renewcommand*{\@@MajorProf}{Major Professors: #1}}
@@ -723,7 +727,7 @@
         \stop
       }
     {
-      \renewcommand*{\baselinestretch}{2} \reset@font
+      \renewcommand*{\baselinestretch}{1.5} \reset@font
       \setcounter{save@@page}{\value{page}}
       \begin{titlepage}
         \mbox{}
@@ -732,6 +736,11 @@
         \begin{center}
         \uppercase\expandafter{\@@Title}
         \end{center}
+
+      \renewcommand*{\baselinestretch}{1.0} \reset@font
+
+        \noindent\rule{\textwidth}{0.4pt}
+
         \ifthen{\(\boolean{number@@all@@volumes} \and \value{last@@volume}>1\) \or \value{@@volume}>1}
           {
             \begin{center}
@@ -750,25 +759,35 @@
           %by\\
           %\@@TitleAuthor
         \end{center}
+
+        \noindent\rule{\textwidth}{0.4pt}
+
         \vfil
         \begin{center}
           In Partial Fulfillment of the\\
           Requirements for the Degree of\\
           \@@TitleDegree
         \end{center}
+
+        \noindent\rule{\textwidth}{0.4pt}
+
         \vfil
         \begin{center}
           by\\
-          \@@TitleAuthor
+          \@@TitleAuthor \\
+         Diploma Date \@@DegreeMonth\ \@@DegreeYear
+        %  Temple University\\
+        %  \@@Campus, Pennsylvania 
         \end{center}
-        \ifthenelse{\equal{mse}{\@@dept}}
-          {}
-          {\vfil}
-        \begin{center}
-          \@@DegreeMonth\ \@@DegreeYear\\
-          Temple University\\
-          \@@Campus, Pennsylvania 
-        \end{center}
+
+        \vfil
+
+      \renewcommand*{\baselinestretch}{2.0} \reset@font
+        \noindent
+        Examining Committee Members: \\
+        \@@Committee
+
+
         \ifthenelse{\equal{mse}{\@@dept}}
           {}
           {\vfil\vfil}
@@ -779,8 +798,7 @@
     }
   }
 \newenvironment{dedication}%
-  {%
-    \newpage
+  {\@@nonchapter{next}{DEDICATION}{y}{0pt}%
     \mbox{}
     \vfil
     \begin{center}%
@@ -817,8 +835,10 @@
 }}
 
 \newenvironment{copyrightpage}%
-  {\@@nonchapter{next}{}{n}{0pt}}%
-  {}
+  {\@@nonchapter{next}{}{n}{0pt}%
+      \renewcommand*{\baselinestretch}{1.0} \reset@font
+   }
+  { }
 
 \newenvironment{acknowledgments}%
   {\@@nonchapter{next}{ACKNOWLEDGMENTS}{y}{0pt}}%

@@ -42,10 +42,10 @@
 %  that has a Very Long Title%
 %}
 \title{
-\huge \bfseries The Most Important \\
-Temple University \\
-Thesis Ever
-}
+\large \bfseries Latex is smart enough to automatically\\
+capitalize the title, but please\\
+note the inverted pyramid\\
+line break scheme}
 
 % First author name with first name first is used for cover.
 % Second author name with last name first is used for abstract.
@@ -82,7 +82,11 @@ Thesis Ever
 %     \majorprofs{Sarah Smith, Amy A. Jones, and Lisa B. C. Brown}
 % depending on the number of major professors you have.
 % CHANGE NEXT LINE.
-\majorprof{Hubert J. Farnsworth}
+\committee{Hubert J. Farnsworth, Advisory Chair, Physics Department\\
+   Somebody else, Math Department\\
+   Somebody else, Physics Department\\
+   Dr. Strangelove, External memeber, Coke-a-cola Company
+}
 
 % Campus (used only on cover)
 % Use one of the following:
@@ -163,14 +167,17 @@ In galaxy far far away.
 
 The original was better.
 
-\section{Bite My Shiny}
+\section{Herding cats}
 
 Oh.
 
-\subsection{Metal}
+\subsection{Is fun}
 
 Bender. \cite{futurama}
 
+%\bibliographystyle{amsalpha} %The style you want to use for references.
+\bibliography{template.bib} 
+%The files containing all the articles and books you ever referenced.
 
 % Appendices are optional.
 % Appendices are not necessarily a part of every thesis.
@@ -185,9 +192,6 @@ Bender. \cite{futurama}
 \appendices
 \include{appendix}
 
-%\bibliographystyle{amsalpha} %The style you want to use for references.
-\bibliography{template.bib} 
-%The files containing all the articles and books you ever referenced.
 
 %\include{demo-citations}
 %\include{demo-figures}
